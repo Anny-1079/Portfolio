@@ -2166,3 +2166,61 @@ ul {
         padding: 0 20px;
     }
 }
+
+
+@media (max-width: 768px) {
+    .stage-row {
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .stage-row.active .stage-number {
+        color: var(--text-dark);
+        -webkit-text-stroke: 1px transparent;
+        transform: translateX(10px);
+    }
+
+    .stage-row.active .stage-info {
+        transform: translateX(15px);
+    }
+
+    .stage-row.active::after {
+        width: 100%;
+    }
+
+    .stage-row.active .stage-badge {
+        background: var(--text-dark);
+        color: var(--text-light);
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Disable heavy 3D transforms */
+    .studio-card:hover {
+        transform: none;
+    }
+
+    /* Make glass cards visible without backdrop-filter */
+    .studio-card {
+        background: rgba(255, 255, 255, 0.06);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    /* Disable kinetic letter animation */
+    .kinetic-letter {
+        display: none;
+    }
+
+    /* Keep achievement cards simple */
+    .achievement-card {
+        animation: none;
+        transform: none !important;
+    }
+
+    /* Make spotlight effect static */
+    .spotlight-effect::before {
+        display: none;
+    }
+}
