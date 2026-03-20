@@ -197,3 +197,19 @@ if (contactForm) {
     });
 }
 });
+
+
+// Academic Journey tap animation for mobile
+const stageRows = document.querySelectorAll('.stage-row');
+
+stageRows.forEach(row => {
+    row.addEventListener('click', () => {
+        const isActive = row.classList.contains('active');
+        // Remove active from all
+        stageRows.forEach(r => r.classList.remove('active'));
+        // Toggle clicked one
+        if (!isActive) {
+            row.classList.add('active');
+        }
+    });
+});
