@@ -2010,38 +2010,102 @@ ul {
 
 
 
-
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     margin-bottom: 30px;
 }
 
 .footer-social a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    padding: 10px 24px;
+    gap: 14px;
+    color: rgba(255,255,255,0.5);
+    background: none;
+    border: none;
+    border-radius: 0;
     width: auto;
     height: auto;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
 }
 
 .footer-social a:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-    transform: translateY(-3px);
+    color: #fff;
+    background: none;
+    transform: translateY(-5px);
 }
 
-.footer-social a i {
-    font-size: 0.9rem;
+.footer-social a .icon-circle {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Rotating ring animation on hover */
+.footer-social a .icon-circle::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-top-color: rgba(255,255,255,0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: spin 1.5s linear infinite;
+}
+
+.footer-social a:hover .icon-circle::before {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footer-social a:hover .icon-circle {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.link-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Underline slide animation */
+.link-label::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width 0.3s ease;
+    margin-top: 3px;
+}
+
+.footer-social a:hover .link-label::after {
+    width: 100%;
+}
+
+.footer-divider {
+    color: rgba(255,255,255,0.2);
+    font-size: 2rem;
+    line-height: 1;
+    align-self: center;
 }
